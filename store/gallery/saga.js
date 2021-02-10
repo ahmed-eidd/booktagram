@@ -15,6 +15,6 @@ function* fetchGallerySaga ({payload}) {
   }
 }
 
-export default function*() {
+export default function* gallerySaga() {
   yield takeLatest(fetchGallery, fetchGallerySaga)
 }
