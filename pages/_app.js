@@ -2,11 +2,41 @@ import '../styles/globals.scss';
 import { Provider } from 'react-redux';
 import { IntlProvider } from 'react-intl';
 import { useRouter } from 'next/router';
+import { ChakraProvider } from '@chakra-ui/react';
 import * as locales from '../content/locale';
 import Head from 'next/head';
 import store from '../service/configureStore';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import firebase from 'firebase/app';
+import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
 
 function MyApp({ Component, pageProps }) {
+  const fbconfing = {
+    apiKey: 'AIzaSyA6dFWd86WNPcx7YDqAkldnFxDsg6BKEyk',
+    authDomain: 'booktagram-f29df.firebaseapp.com',
+    projectId: 'booktagram-f29df',
+    storageBucket: 'booktagram-f29df.appspot.com',
+    messagingSenderId: '1041639497306',
+    appId: '1:1041639497306:web:504683d81bae6df8f10263',
+    measurementId: 'G-FN3XP1DL6W',
+  };
+
+  const rrfConfing = {
+    userProfie: 'users',
+  };
+
+  // firebase.initializeApp(fbconfing);
+  if (!firebase.apps.length) {
+    firebase.initializeApp(fbconfing);
+  } else {
+    firebase.app(); // if already initialized, use that one
+  }
+  const rrfProps = {
+    firebase,
+    config: rrfConfing,
+    dispatch: store.dispatch,
+  };
   const router = useRouter();
   const { locale, defaultLocale, pathname } = router;
   return (
@@ -24,13 +54,18 @@ function MyApp({ Component, pageProps }) {
         ></link>
       </Head>
       <Provider store={store}>
-        <IntlProvider
-          locale={locale}
-          defaultLocale={defaultLocale}
-          messages={locales[locale]}
-        >
-          <Component {...pageProps} />
-        </IntlProvider>
+        <ReactReduxFirebaseProvider {...rrfProps}>
+          <ChakraProvider>
+            <IntlProvider
+              locale={locale}
+              defaultLocale={defaultLocale}
+              messages={locales[locale]}
+            >
+              <Component {...pageProps} />
+              <ToastContainer />
+            </IntlProvider>
+          </ChakraProvider>
+        </ReactReduxFirebaseProvider>
       </Provider>
     </>
   );

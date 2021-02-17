@@ -11,14 +11,14 @@ html,
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%;
+  // font-size: 62.5%;
 }
 
 body {
   padding: 0;
   margin: 0;
   font-family: 'Nunito Sans', sans-serif;
-  font-size: 1.4rem;
+  font-size: 14px;
 }
 
 a {
@@ -28,4 +28,9 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+
+.Toastify__toast--success {
+  border-radius: 0 !important;
 }

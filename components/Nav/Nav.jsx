@@ -9,7 +9,9 @@ const Nav = () => {
   const f = (id) => formatMessage({ id });
   return (
     <div className={classes.container}>
-      <div className={classes.logo}>Booktagram</div>
+      <Link href="/">
+        <a className={classes.logo}>Booktagram</a>
+      </Link>
       <div className={classes.navItems}>
         <ul className={classes.navList}>
           <li className={classes.navItem}>
@@ -18,13 +20,11 @@ const Nav = () => {
             </Link>
           </li>
           <li className={classes.navItem}>
-            {' '}
             <Link href="/news">
               <a>{f('nav_events')}</a>
             </Link>
           </li>
           <li className={classes.navItem}>
-            {' '}
             <Link href="/news">
               <a>{f('nav_liberies')}</a>
             </Link>

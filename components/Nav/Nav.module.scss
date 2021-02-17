@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 0.7rem 0;
+  padding: 7px 0;
   border-bottom: 1px solid #ddd;
 }
 
@@ -23,8 +23,8 @@
 
 .navItem {
   font-weight: 700;
-  // margin-right: 3rem;
-  padding: 1rem 2.5rem;
+  // margin-right: 3px;
+  padding: 10px 25px;
   text-transform: uppercase;
   transition: color 0.3s;
   &:hover {
@@ -33,8 +33,9 @@
 }
 
 .logo {
+  
   font-family: 'Pacifico', cursive;
-  padding: .5rem;
-  font-size: 2.6rem;
+  padding: 5px;
+  font-size: 26px;
   // background-color: $color-primary;
 }
