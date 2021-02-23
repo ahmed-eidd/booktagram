@@ -1,6 +1,6 @@
 import { Formik } from 'formik';
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import FormGroup from '../components/FormGroup/FormGroup';
 import InputField from '../components/InputField/InputField';
 import Layout from '../components/Layout/Layout';
@@ -16,13 +16,17 @@ const schema = () =>
 
 const register = () => {
   const dispatch = useDispatch();
+  const auth = useSelector((state) => state.firebase.auth)
+  console.log(auth);
   const [load, setload] = useState(false);
   return (
     <Layout>
+      { !auth.isEmpty &&
       <Button type="submit" onClick={() => {
         dispatch(signOut())
         console.log('sometihng')
       }}>SignOut</Button>
+}
       <Formik
         validationSchema={schema()}
         initialValues={schema().cast()}
@@ -68,3 +72,5 @@ const register = () => {
 };
 
 export default register;
+
+
