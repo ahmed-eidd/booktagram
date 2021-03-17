@@ -9,6 +9,9 @@ import { useDispatch } from 'react-redux';
 import { fetchGallery } from '../store/gallery/slice';
 import { fetchNews } from '../store/news/slice';
 import { useToast } from '@chakra-ui/react';
+import Image from 'next/image';
+import Button from '../components/Button/Button';
+import Header from '../components/Header/Header';
 
 export default function Home() {
   const key = process.env.NEXT_PUBLIC_NY_API_KEY;
@@ -23,7 +26,7 @@ export default function Home() {
   const f = (id) => formatMessage({ id });
   return (
     <Layout>
-      <h1>hello world</h1>
+      <Header />
     </Layout>
   );
 }

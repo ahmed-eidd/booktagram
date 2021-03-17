@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  height: 90vh;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.HeaderText {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  padding: 0 10px;
+  margin-bottom: 40px;
+
+  h3 {
+    font-size: 50px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 23px;
+    margin: 15px 0;
+    
+  }
+
+}

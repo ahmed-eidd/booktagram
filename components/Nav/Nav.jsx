@@ -1,7 +1,8 @@
 import React from 'react';
 import classes from './Nav.module.scss';
 import Link from 'next/link';
-import { useIntl } from 'react-intl';
+import { useIntl} from 'react-intl';
+import { Select } from '@chakra-ui/react';
 import Button from '../Button/Button';
 
 const Nav = () => {
@@ -16,6 +17,11 @@ const Nav = () => {
         <ul className={classes.navList}>
           <li className={classes.navItem}>
             <Link href="/news">
+              <a>{f('nav_home')}</a>
+            </Link>
+          </li>
+          <li className={classes.navItem}>
+            <Link href="/news">
               <a>{f('nav_news')}</a>
             </Link>
           </li>
@@ -26,13 +32,29 @@ const Nav = () => {
           </li>
           <li className={classes.navItem}>
             <Link href="/news">
-              <a>{f('nav_liberies')}</a>
+              <a>{f('nav_shop')}</a>
+            </Link>
+          </li>
+          <li className={classes.navItem}>
+            <Link href="/news">
+              <a>{f('nav_about')}</a>
             </Link>
           </li>
         </ul>
-        <Button type="link" to="/signup">
-          {f('join')}
+      </div>
+      <div className={classes.navBtns}>
+        <Button style={{marginRight: '5px'}} type="link" to="/signup">
+          {f('nav_signup')}
         </Button>
+          <Button type="link" to="/signup" variant="outline">
+          {f('nav_login')}
+        </Button>
+       <Select className={classes.langSelect} isFullWidth={false} colorScheme='green' style={{border: 'none'}} size='sm' width='auto' onChange={() => {
+         console.log('changed')
+       }}> 
+          <option value='ar'>AR</option>
+          <option value='en'>EN</option>
+        </Select> 
       </div>
     </div>
   );

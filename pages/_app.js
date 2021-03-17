@@ -2,7 +2,7 @@ import '../styles/globals.scss';
 import { Provider } from 'react-redux';
 import { IntlProvider } from 'react-intl';
 import { useRouter } from 'next/router';
-import { ChakraProvider } from '@chakra-ui/react';
+import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import * as locales from '../content/locale';
 import Head from 'next/head';
 import store from '../service/configureStore';
@@ -37,14 +37,27 @@ function MyApp({ Component, pageProps }) {
     config: rrfConfing,
     dispatch: store.dispatch,
   };
+
+  // const theme = extendTheme({
+  //   styles: {
+  //     global: {
+  //       'html': {
+  //         fontSize: '62.5%',
+  //       },
+  //     },
+  //   },
+  // });
+
   const router = useRouter();
   const { locale, defaultLocale, pathname } = router;
+  console.log(locale, defaultLocale);
   return (
     <>
       <Head>
         <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+        <link rel="preconnect" href="https://fonts.gstatic.com"></link>
         <link
-          href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap"
           rel="stylesheet"
         ></link>
         <link rel="preconnect" href="https://fonts.gstatic.com" />

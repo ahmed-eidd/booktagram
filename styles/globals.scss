@@ -1,4 +1,7 @@
-@import './variables';
+@use './abstract/colors' as clr;
+@use './abstract/typography' as typo;
+@use './abstract/breakpoints' as bp;
+
 
 html,
 *,
@@ -7,6 +10,7 @@ html,
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: clr.$color-primary;
 }
 
 html {
@@ -17,8 +21,11 @@ html {
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: typo.$font-primary !important;
+  // font-family: sans-serif;
   font-size: 14px;
+  background-color: clr.$color-secondary !important;
+  
 }
 
 a {

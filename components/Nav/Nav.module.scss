@@ -1,11 +1,14 @@
-@import '../../styles/variables';
+@use '../../styles/abstract/colors' as clr;
+@use '../../styles/abstract/breakpoints' as bp;
+@use '../../styles/abstract/typography' as typo;
+
 .container {
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 7px 0;
-  border-bottom: 1px solid #ddd;
+  padding: 25px 0;
+  // border-bottom: 1px solid #ddd;
 }
 
 .navItems {
@@ -22,10 +25,10 @@
 }
 
 .navItem {
-  font-weight: 700;
+  // font-weight: 700;
   // margin-right: 3px;
   padding: 10px 25px;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   transition: color 0.3s;
   &:hover {
     color: rgba($color: #000000, $alpha: 0.5);
@@ -33,9 +36,22 @@
 }
 
 .logo {
-  
   font-family: 'Pacifico', cursive;
   padding: 5px;
   font-size: 26px;
   // background-color: $color-primary;
+}
+
+.navBtns {
+  display: flex;
+  justify-content: space-around;
+}
+
+.langSelect {
+  margin-left: 10px;
+  border: none;
+  &:focus {
+    outline: none;
+    box-shadow: none !important;
+  }
 }

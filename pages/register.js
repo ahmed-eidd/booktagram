@@ -7,29 +7,35 @@ import Layout from '../components/Layout/Layout';
 import * as Yup from 'yup';
 import Button from '../components/Button/Button';
 import { loginUser, signOut } from '../store/auth/slice';
-
-const schema = () =>
-  Yup.object({
-    email: Yup.string().email(),
-    password: Yup.string().min(6),
-  });
+import { useIntl } from 'react-intl';
 
 const register = () => {
   const dispatch = useDispatch();
-  const auth = useSelector((state) => state.firebase.auth)
+  const auth = useSelector((state) => state.firebase.auth);
+  const { formatMessage } = useIntl();
+  const f = (id) => formatMessage({ id });
   console.log(auth);
+  const schema =  Yup.object({
+      email: Yup.string().email().required(f('join')),
+      password: Yup.string().min(6).required(),
+    });
   const [load, setload] = useState(false);
   return (
     <Layout>
-      { !auth.isEmpty &&
-      <Button type="submit" onClick={() => {
-        dispatch(signOut())
-        console.log('sometihng')
-      }}>SignOut</Button>
-}
+      {!auth.isEmpty && (
+        <Button
+          type="submit"
+          onClick={() => {
+            dispatch(signOut());
+            console.log('sometihng');
+          }}
+        >
+          Sign Out
+        </Button>
+      )}
       <Formik
-        validationSchema={schema()}
-        initialValues={schema().cast()}
+        validationSchema={schema}
+        initialValues={schema.cast}
         onSubmit={(values) => {
           console.log(values);
           dispatch(
@@ -72,5 +78,3 @@ const register = () => {
 };
 
 export default register;
-
-

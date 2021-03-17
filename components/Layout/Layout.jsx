@@ -7,7 +7,7 @@ const Layout = ({children}) => {
     <div>
    <Nav/>
    <div className={classes.container}>
-
+    
    {children}
    </div>
    </div>
