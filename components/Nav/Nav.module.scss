@@ -8,7 +8,20 @@
   justify-content: space-around;
   align-items: center;
   padding: 25px 0;
+  position: fixed;
+  top: 0;
+  transform: translateY(0);
+  transition: all .5s;
+  transform-origin: top;
+  z-index: 500;
+  background-color: clr.$color-secondary;
   // border-bottom: 1px solid #ddd;
+}
+
+.scroll {
+  box-shadow: 0px 8px 6px rgba($color: #00000012, $alpha: 0.1);
+  // box-shadow: 0px 8px 6px #00000012;
+
 }
 
 .navItems {
