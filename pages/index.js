@@ -11,7 +11,8 @@ import { fetchNews } from '../store/news/slice';
 import { useToast } from '@chakra-ui/react';
 import Image from 'next/image';
 import Button from '../components/Button/Button';
-import Header from '../components/Header/Header';
+import Header from '../components/Pages/Home/Header/Header';
+import AboutSection from '../components/Pages/Home/AboutSection/AboutSection';
 
 export default function Home() {
   const key = process.env.NEXT_PUBLIC_NY_API_KEY;
@@ -27,6 +28,7 @@ export default function Home() {
   return (
     <Layout>
       <Header />
+      <AboutSection/>
     </Layout>
   );
 }

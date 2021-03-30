@@ -30,10 +30,8 @@ const Nav = () => {
 
     const onScroll = () => {
       if (window.pageYOffset === 0) {
-
         setScrolling(false);
       } else {
-
         setScrolling(true);
       }
       if (!ticking) {
@@ -50,11 +48,15 @@ const Nav = () => {
 
   return (
     <div
-      className={!scrolling ? classes.container : [classes.container, classes.scroll].join(' ')}
+      className={
+        !scrolling
+          ? classes.container
+          : [classes.container, classes.scroll].join(' ')
+      }
       style={{
         transform:
           scrollDir === 'scrolling up' ? 'translateY(0)' : 'translateY(-100vh)',
-       }}
+      }}
     >
       <Link href="/">
         <a className={classes.logo}>Booktagram</a>
@@ -83,7 +85,17 @@ const Nav = () => {
           </li>
           <li className={classes.navItem}>
             <Link href="/news">
+              <a>{f('nav_guide')}</a>
+            </Link>
+          </li>
+          <li className={classes.navItem}>
+            <Link href="/news">
               <a>{f('nav_about')}</a>
+            </Link>
+          </li>{' '}
+          <li className={classes.navItem}>
+            <Link href="/news">
+              <a>{f('nav_contactus')}</a>
             </Link>
           </li>
         </ul>

@@ -1,0 +1,74 @@
+@use '../../styles/abstract/colors' as clr;
+.Footer {
+  background-color: clr.$color-primary;
+  margin-top: 3rem;
+}
+
+.FooterFirst {
+  width: 85%;
+  margin: 0 auto;
+  // background-color: clr.$color-primary;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1.5rem 0;
+  // margin-bottom: 1rem;
+  border-bottom: 1px solid white;
+}
+
+.FooterAbout {
+  width: 32%;
+  & > * {
+    color: white;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+    text-transform: uppercase;
+  }
+  p {
+    text-align: justify;
+    padding-right: 15px;
+    line-height: 2.5;
+  }
+}
+
+.FooterQuickLinks {
+  & > * {
+    color: white;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+    text-transform: uppercase;
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 30px;
+    row-gap: 15px;
+    margin-top: 0.7rem;
+  }
+}
+
+.FooterForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  h4 {
+    color: white;
+    font-size: 1.4rem;
+  }
+  .Input {
+    border: 2px solid white;
+    color: white;
+    border-radius: 0;
+    margin: 1rem 0;
+    &::placeholder {
+      font-size: 0.75rem;
+      text-align: center;
+    }
+  }
+}
