@@ -12,7 +12,7 @@ const Button = ({ children, type, to, isLoading,variant, onClick, style, ...prop
           <a className={btnClass} onClick={onClick} style={style}>{isLoading ? <div className={classes.loader}>Loading...</div> : children}</a>
         </Link>
       )}
-      {type && type !== 'link' &&  (
+      {type !== 'link' &&  (
         <button onClick={onClick} style={style} className={btnClass} type={type}>
           {isLoading ? <div className={classes.loader}>Loading...</div> : children}
         </button>

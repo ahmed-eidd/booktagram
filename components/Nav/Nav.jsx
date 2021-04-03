@@ -4,12 +4,22 @@ import Link from 'next/link';
 import { useIntl } from 'react-intl';
 import { Select } from '@chakra-ui/react';
 import Button from '../Button/Button';
+import Modal from '../Modal/Modal';
 
 const Nav = () => {
   const { formatMessage } = useIntl();
   const f = (id) => formatMessage({ id });
   const [scrollDir, setScrollDir] = useState('scrolling up');
   const [scrolling, setScrolling] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false)
+
+  const onModalOpen = () => {
+    setModalOpen(true)
+  }
+
+  const onModalClose = () => {
+    setModalOpen(false)
+  }
 
   useEffect(() => {
     const threshold = 0;
@@ -100,11 +110,12 @@ const Nav = () => {
           </li>
         </ul>
       </div>
+      <Modal isOpen={modalOpen} onClose={onModalClose} onOpen={onModalOpen} />
       <div className={classes.navBtns}>
-        <Button style={{ marginRight: '5px' }} type="link" to="/signup">
+        <Button style={{ marginRight: '5px' }} onClick={onModalOpen} >
           {f('nav_signup')}
         </Button>
-        <Button type="link" to="/signup" variant="outline">
+        <Button variant="outline">
           {f('nav_login')}
         </Button>
         <Select
