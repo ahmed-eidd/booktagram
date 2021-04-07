@@ -38,15 +38,15 @@ function MyApp({ Component, pageProps }) {
     dispatch: store.dispatch,
   };
 
-  // const theme = extendTheme({
-  //   styles: {
-  //     global: {
-  //       'html': {
-  //         fontSize: '62.5%',
-  //       },
-  //     },
-  //   },
-  // });
+  const theme = extendTheme({
+    styles: {
+      global: {
+        'body': {
+          color: '#21545F' 
+        },
+      },
+    },
+  });
 
   const router = useRouter();
   const { locale, defaultLocale, pathname } = router;
@@ -74,7 +74,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <Provider store={store}>
         <ReactReduxFirebaseProvider {...rrfProps}>
-          <ChakraProvider>
+          <ChakraProvider theme={theme}>
             <IntlProvider
               locale={locale}
               defaultLocale={defaultLocale}

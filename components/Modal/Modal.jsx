@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-  Modal,
+  Modal as ChakraModal,
   ModalOverlay,
   ModalContent,
   ModalHeader,
@@ -10,29 +10,29 @@ import {
   useDisclosure,
   Button
 } from "@chakra-ui/react"
+import classes from './Modal.module.scss';
 
-const LoginModal = ({isOpen, onOpen, onClose}) => {
+const Modal = ({isOpen, onOpen, onClose, children}) => {
   // const {  onOpen, onClose } = useDisclosure();
   return (
-      <Modal isOpen={isOpen} onClose={onClose}>
+      <ChakraModal isOpen={isOpen} onClose={onClose} scrollBehavior='inside' className={classes.Modal}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Modal Title</ModalHeader>
-          <ModalCloseButton />
+          <ModalCloseButton className={classes.ModalCloseBtn} colorScheme='white' />
           <ModalBody>
-            <div>Modal Body</div>
+            {children}
           </ModalBody>
 
-          <ModalFooter>
+          {/* <ModalFooter>
             <Button colorScheme="blue" mr={3} onClick={onClose}>
               Close
             </Button>
             <Button variant="ghost">Secondary Action</Button>
-          </ModalFooter>
+          </ModalFooter> */}
         </ModalContent>
-      </Modal>
+      </ChakraModal>
 
   )
 }
 
-export default LoginModal;
+export default Modal;

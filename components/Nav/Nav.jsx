@@ -5,6 +5,8 @@ import { useIntl } from 'react-intl';
 import { Select } from '@chakra-ui/react';
 import Button from '../Button/Button';
 import Modal from '../Modal/Modal';
+import LoginModal from '../LoginModal/LoginModal';
+
 
 const Nav = () => {
   const { formatMessage } = useIntl();
@@ -12,9 +14,16 @@ const Nav = () => {
   const [scrollDir, setScrollDir] = useState('scrolling up');
   const [scrolling, setScrolling] = useState(false);
   const [modalOpen, setModalOpen] = useState(false)
+  const [tab, setTab] = useState('')
 
-  const onModalOpen = () => {
+  const signUpOpen = () => {
     setModalOpen(true)
+    setTab('signup')
+  }
+
+  const signInOpen = () => {
+    setModalOpen(true)
+    setTab('signin')
   }
 
   const onModalClose = () => {
@@ -110,12 +119,14 @@ const Nav = () => {
           </li>
         </ul>
       </div>
-      <Modal isOpen={modalOpen} onClose={onModalClose} onOpen={onModalOpen} />
+     
+      <LoginModal open={modalOpen} close={onModalClose} tab={tab} />
+
       <div className={classes.navBtns}>
-        <Button style={{ marginRight: '5px' }} onClick={onModalOpen} >
+        <Button style={{ marginRight: '5px' }} onClick={signUpOpen} >
           {f('nav_signup')}
         </Button>
-        <Button variant="outline">
+        <Button variant="outline" onClick={signInOpen}>
           {f('nav_login')}
         </Button>
         <Select

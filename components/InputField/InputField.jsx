@@ -11,7 +11,7 @@ import {
 const InputField = ({ label, placeholder, type, ...props }) => {
   const [field, { error, touched,  }] = useField(props);
   const [focus, setFocus] = useState(false)
-  console.log(touched)
+
   return (
     // <>
     // <label htmlFor={field.name}>{label}</label>

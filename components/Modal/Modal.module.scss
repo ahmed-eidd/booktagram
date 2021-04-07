@@ -1,0 +1,13 @@
+@use '../../styles/abstract/colors' as clr;
+
+.Modal {
+  border-radius: 0.8rem;
+}
+
+.ModalCloseBtn {
+  background-color: clr.$color-primary;
+  border-radius: 500px !important;
+  svg {
+    color: white !important;
+  }
+}
