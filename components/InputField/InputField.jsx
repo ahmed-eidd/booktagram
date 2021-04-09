@@ -19,7 +19,7 @@ const InputField = ({ label, placeholder, type, ...props }) => {
     // <input placeholder={placeholder} {...field} type={type}/>
     // </>
     <FormControl
-      style={{ position: 'relative' }}
+      style={{ position: 'relative',marginTop:'1.5rem', marginBottom: '1.5rem' }}
       my={7}
       isInvalid={error && touched}
     >

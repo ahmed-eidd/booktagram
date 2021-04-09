@@ -2,8 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 import classes from './Button.module.scss';
 
-const Button = ({ children, type, to, isLoading,variant, onClick, style, ...props }) => {
-  const btnClass = variant === 'outline' ? [classes.btn, classes.outline].join(' ') : [classes.btn, classes.filled].join(' ')
+const Button = ({ children, type, to, isLoading,variant, onClick, style, className, ...props }) => {
+  const btnClass = variant === 'outline' ? [classes.btn, classes.outline, className].join(' ') : [classes.btn, classes.filled, className].join(' ')
   return (
     <>
       {type === 'link' &&  (

@@ -3,7 +3,7 @@ import { Text } from '@chakra-ui/layout';
 import { Field } from 'formik';
 import React from 'react';
 
-const Checkbox = ({ name, children, checked }) => {
+const Checkbox = ({ name, children, checked , className}) => {
   return (
     <Field name={name}>
       {({ field, form }) => (
@@ -19,6 +19,7 @@ const Checkbox = ({ name, children, checked }) => {
           onChange={(e) => {
             form.setFieldValue(name, e.target.checked);
           }}
+          className={className}
         >
           <Text fontSize="sm" textAlign="left">
             {children}
