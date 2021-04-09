@@ -7,6 +7,7 @@ import {
   FormHelperText,
   Input,
 } from '@chakra-ui/react';
+import classes from './InputField.module.scss';
 
 const InputField = ({ label, placeholder, type, ...props }) => {
   const [field, { error, touched,  }] = useField(props);
@@ -31,10 +32,11 @@ const InputField = ({ label, placeholder, type, ...props }) => {
         // onBlur={() => {
         //   setFocus(false)
         // }}
-        width="100%"
+
         id={field.name}
         type={type}
         placeholder={placeholder}
+        className={classes.Input}
       />
       {error && touched && (
         <FormErrorMessage
