@@ -83,7 +83,7 @@ const Nav = () => {
       <div className={classes.navItems}>
         <ul className={classes.navList}>
           <li className={classes.navItem}>
-            <Link href="/news">
+            <Link href="/">
               <a>{f('nav_home')}</a>
             </Link>
           </li>

@@ -11,7 +11,6 @@ import classes from './LoginModal.module.scss';
 
 const LoginModal = ({ tab, open, close }) => {
 
-
   const [tabSwitch,setTabSwitch] = useState('')
   
   useEffect(()=> {
