@@ -6,6 +6,10 @@ import Image from 'next/image';
 const Card = ({ subTitle, title, text, btn }) => {
   return (
     <div className={classes.Card}>
+      <div className={classes.Date}>
+        <p>14</p>
+        <p>Mar</p>
+      </div>
       <div className={classes.CardImg}>
         <Image
           src="/assests/news/Background.jpg"

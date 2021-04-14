@@ -5,11 +5,12 @@
   grid-template-columns: repeat(auto-fill, 26rem);
   justify-content: center;
   justify-items: center;
-  row-gap: 8rem;
+  row-gap: 6rem;
   column-gap: 2rem;
 }
 
 .Card {
+  position: relative;
   width: 24rem;
   display: flex;
   flex-direction: column;
@@ -28,7 +29,9 @@
 }
 
 .CardInfo {
-  margin: 2rem 0;
+  // margin: 2rem 0;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
   padding: 0 1rem;
   display: flex;
   flex-direction: column;
@@ -47,4 +50,21 @@
   p {
     margin-bottom: 1.2rem;
   }
+}
+
+.Date {
+  background-color: clr.$color-primary;
+  position: absolute;
+  top: 0%;
+  right: 0;
+  z-index: 100;
+  color: white;
+  height: 3.5rem;
+  width: 3.5rem;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  // padding: .5rem 0;
 }

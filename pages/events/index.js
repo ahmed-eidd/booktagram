@@ -1,10 +1,9 @@
-import React from 'react';
-import Card from '../components/Card/Card';
-import CardsContainer from '../components/Card/CardsContainer';
-import Layout from '../components/Layout/Layout';
+import React from 'react'
+import Layout from '../../components/Layout/Layout';
+import CardsContainer from '../../components/Card/CardsContainer';
+import Card from '../../components/Card/Card';
 
-
-const news = () => {
+const events = () => {
   return (
     <Layout>
       <CardsContainer>
@@ -22,4 +21,4 @@ const news = () => {
   )
 }
 
-export default news
+export default events;

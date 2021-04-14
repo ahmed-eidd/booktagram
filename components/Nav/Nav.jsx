@@ -93,27 +93,27 @@ const Nav = () => {
             </Link>
           </li>
           <li className={classes.navItem}>
-            <Link href="/news">
+            <Link href="/events">
               <a>{f('nav_events')}</a>
             </Link>
           </li>
           <li className={classes.navItem}>
-            <Link href="/news">
+            <Link href="/shop">
               <a>{f('nav_shop')}</a>
             </Link>
           </li>
           <li className={classes.navItem}>
-            <Link href="/news">
+            <Link href="/guide">
               <a>{f('nav_guide')}</a>
             </Link>
           </li>
           <li className={classes.navItem}>
-            <Link href="/news">
+            <Link href="/about">
               <a>{f('nav_about')}</a>
             </Link>
           </li>{' '}
           <li className={classes.navItem}>
-            <Link href="/news">
+            <Link href="/contactus">
               <a>{f('nav_contactus')}</a>
             </Link>
           </li>
