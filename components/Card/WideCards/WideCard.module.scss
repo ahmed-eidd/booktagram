@@ -1,0 +1,41 @@
+@use '../../../styles/abstract/colors' as clr;
+
+.WideCard {
+  display: flex;
+  align-items: center;
+  border: 1px solid clr.$color-primary;
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+
+.ImgContainer {
+  position: relative;
+  min-width: 23.3rem;
+  height: 15rem;
+}
+
+
+
+.TextContainer {
+  padding: 0 1.5rem;
+
+
+
+  h3 {
+    font-size:1.5rem ;
+    font-weight: bold;
+  }
+
+  
+
+  p {
+    
+
+    span {
+      font-size: 1rem;
+      font-weight: bold;
+      margin-right: .5rem;
+    }
+  }
+}

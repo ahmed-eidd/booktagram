@@ -1,10 +1,11 @@
 import React from 'react'
+import CardPage from '../../components/Card/CardPage';
 import Layout from '../../components/Layout/Layout';
 
 const event = () => {
   return (
     <Layout>
-      <h3>HI</h3>
+      <CardPage></CardPage>
     </Layout>
   )
 }

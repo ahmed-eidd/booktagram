@@ -50,7 +50,7 @@ function MyApp({ Component, pageProps }) {
 
   const router = useRouter();
   const { locale, defaultLocale, pathname } = router;
-  console.log(locale, defaultLocale);
+
   return (
     <>
       <Head>

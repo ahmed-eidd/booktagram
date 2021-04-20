@@ -19,12 +19,12 @@ const Footer = () => {
           <h4>{f('footer_quick_links_title')}</h4>
           <ul>
             {/* link container */}
-            <FooterLink to=""> {f('footer_quick_link_shop')} </FooterLink>
-            <FooterLink to=""> {f('footer_quick_link_guide')} </FooterLink>
-            <FooterLink to=""> {f('footer_quick_link_events')} </FooterLink>
-            <FooterLink to=""> {f('footer_quick_link_clubs')} </FooterLink>
-            <FooterLink to=""> {f('footer_quick_link_news')} </FooterLink>
-            <FooterLink to=""> {f('footer_quick_link_reviews')} </FooterLink>
+            <FooterLink to="/"> {f('footer_quick_link_shop')} </FooterLink>
+            <FooterLink to="/"> {f('footer_quick_link_guide')} </FooterLink>
+            <FooterLink to="/"> {f('footer_quick_link_events')} </FooterLink>
+            <FooterLink to="/"> {f('footer_quick_link_clubs')} </FooterLink>
+            <FooterLink to="/"> {f('footer_quick_link_news')} </FooterLink>
+            <FooterLink to="/"> {f('footer_quick_link_reviews')} </FooterLink>
           </ul>
         </div>
 

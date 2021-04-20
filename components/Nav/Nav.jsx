@@ -2,35 +2,40 @@ import React, { useEffect, useState } from 'react';
 import classes from './Nav.module.scss';
 import Link from 'next/link';
 import { useIntl } from 'react-intl';
+import { useRouter } from 'next/router';
 import { Select } from '@chakra-ui/react';
 import Button from '../Button/Button';
 import Modal from '../Modal/Modal';
 import LoginModal from '../LoginModal/LoginModal';
 
-
 const Nav = () => {
+  const router = useRouter();
+  const { locale, locales, defaultLocale } = router;
+  const [lang, setLang] = useState('');
+
   const { formatMessage } = useIntl();
   const f = (id) => formatMessage({ id });
   const [scrollDir, setScrollDir] = useState('scrolling up');
   const [scrolling, setScrolling] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false)
-  const [tab, setTab] = useState('')
+  const [modalOpen, setModalOpen] = useState(false);
+  const [tab, setTab] = useState('');
 
   const signUpOpen = () => {
-    setModalOpen(true)
-    setTab('signup')
-  }
+    setModalOpen(true);
+    setTab('signup');
+  };
 
   const signInOpen = () => {
-    setModalOpen(true)
-    setTab('signin')
-  }
+    setModalOpen(true);
+    setTab('signin');
+  };
 
   const onModalClose = () => {
-    setModalOpen(false)
-  }
+    setModalOpen(false);
+  };
 
   useEffect(() => {
+    console.log(router.pathname)
     const threshold = 0;
     let lastScrollY = window.pageYOffset;
     let ticking = false;
@@ -119,25 +124,32 @@ const Nav = () => {
           </li>
         </ul>
       </div>
-     
+
       <LoginModal open={modalOpen} close={onModalClose} tab={tab} />
 
       <div className={classes.navBtns}>
-        <Button style={{ marginRight: '5px' }} onClick={signUpOpen} >
+        <Button style={{ marginRight: '5px' }} onClick={signUpOpen}>
           {f('nav_signup')}
         </Button>
         <Button variant="outline" onClick={signInOpen}>
           {f('nav_login')}
         </Button>
         <Select
+          defaultValue={locale}
           className={classes.langSelect}
           isFullWidth={false}
           colorScheme="green"
-          style={{ border: 'none' }}
+          style={{ border: 'none', fontWeight: 'bold' }}
           size="sm"
           width="auto"
-          onChange={() => {
-            console.log('changed');
+
+          onChange={(e) => {
+            console.log(e.target.value);
+            const path = router.pathname;
+           
+
+            router.push(`${lang}`);
+            // router.reload()
           }}
         >
           <option value="ar">AR</option>

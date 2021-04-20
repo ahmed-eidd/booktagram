@@ -63,6 +63,8 @@
 .langSelect {
   margin-left: 10px;
   border: none;
+  font-weight: bold;
+  background-color: clr.$color-primary;
   &:focus {
     outline: none;
     box-shadow: none !important;
