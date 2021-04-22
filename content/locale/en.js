@@ -8,6 +8,7 @@ export const en = {
   nav_events: 'Events',
   nav_about: 'About',
   nav_shop: 'Shop',
+  nav_club: 'Club',
   nav_login: 'Log in',
   nav_signup: 'Sign up',
   nav_guide: 'Guide',

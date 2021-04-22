@@ -11,11 +11,11 @@
 
 .ImgContainer {
   position: relative;
-  min-width: 23.3rem;
-  height: 15rem;
+  // min-width: 23.3rem;
+  // height: 15rem;
 
-  // min-width: 30.3rem;
-  // height: 23rem;
+  min-width: 30.3rem;
+  height: 23rem;
 }
 
 
@@ -33,7 +33,7 @@
   
 
   p {
-    
+      margin: .5rem 0;
 
     span {
       font-size: 1rem;

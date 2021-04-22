@@ -6,6 +6,7 @@ export const ar = {
   nav_events: 'الندوات',
   nav_about: 'حول',
   nav_shop: 'المتجر',
+  nav_club: 'نوادي القراءة',
   nav_login: 'تسجيل دخول',
   nav_signup: 'اشترك',
   nav_guide: 'دليل',

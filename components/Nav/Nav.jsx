@@ -108,6 +108,11 @@ const Nav = () => {
             </Link>
           </li>
           <li className={classes.navItem}>
+            <Link href="/club">
+              <a>{f('nav_club')}</a>
+            </Link>
+          </li>
+          <li className={classes.navItem}>
             <Link href="/guide">
               <a>{f('nav_guide')}</a>
             </Link>
