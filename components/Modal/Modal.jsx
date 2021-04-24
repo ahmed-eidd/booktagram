@@ -8,19 +8,31 @@ import {
   ModalBody,
   ModalCloseButton,
   useDisclosure,
-  Button
+  Button,
+  Spinner
 } from "@chakra-ui/react"
 import classes from './Modal.module.scss';
 
-const Modal = ({isOpen, onOpen, onClose, children}) => {
+
+
+const Modal = ({isOpen, onOpen, onClose, children, loading}) => {
   // const {  onOpen, onClose } = useDisclosure();
+  const ModalClasses = [classes.ModalChildren, loading ? classes.ModalChildrenLoading : null].join(' ')
+
+  const SpinnerClasses = [classes.ModalSpinner, loading ? classes.ModalSpinnerLoading : null ].join(' ')
+
   return (
       <ChakraModal isOpen={isOpen} onClose={onClose} scrollBehavior='inside' className={classes.Modal}>
         <ModalOverlay />
         <ModalContent>
           <ModalCloseButton className={classes.ModalCloseBtn} colorScheme='white' />
-          <ModalBody>
+          <ModalBody className={classes.ModalBody}>
+            <div className={ModalClasses}>
+
             {children}
+            </div>
+            <Spinner className={SpinnerClasses} size="xl"  thickness="4px"
+/>
           </ModalBody>
 
           {/* <ModalFooter>

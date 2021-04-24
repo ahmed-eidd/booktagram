@@ -12,6 +12,7 @@ import classes from './LoginModal.module.scss';
 const LoginModal = ({ tab, open, close }) => {
 
   const [tabSwitch,setTabSwitch] = useState('')
+  const [loading, setLoading] = useState(false)
   
   useEffect(()=> {
     setTabSwitch(tab)
@@ -45,6 +46,7 @@ const LoginModal = ({ tab, open, close }) => {
         initialValues={signInSchema.cast()}
         onSubmit={(values) => {
           console.log(values);
+          setLoading(true)
         }}
       >
         {() => (
@@ -89,6 +91,7 @@ const LoginModal = ({ tab, open, close }) => {
         initialValues={signUpSchema.cast()}
         onSubmit={(values) => {
           console.log(values);
+          setLoading(true)
         }}
       >
         {() => (
@@ -132,7 +135,7 @@ const LoginModal = ({ tab, open, close }) => {
   );
 
   return (
-    <Modal isOpen={open} onClose={close}>
+    <Modal isOpen={open} onClose={close} loading={loading}>
       <div className={classes.Container}>
         {tabSwitch === 'signin' && signIn}
         {tabSwitch === 'signup' && signUp}
