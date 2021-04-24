@@ -1,4 +1,5 @@
 @use '../../../styles/abstract/colors' as clr;
+@use '../../../styles/abstract/typography' as typo;
 
 .GroupCard {
   position: relative;
@@ -25,6 +26,9 @@
   position: relative;
   height: 91%;
   width: 91%;
+  img {
+    border-radius: 4px;
+  }
 }
 
 .ImgCircle {
@@ -32,8 +36,8 @@
   position: relative;
   position: absolute;
   overflow: hidden;
-  width: 10rem;
-  height: 10rem;
+  width: 11rem;
+  height: 11rem;
   background-color: clr.$color-secondary;
   top: 75%;
   left: 50%;
@@ -44,7 +48,8 @@
 .Title {
   font-size: 1.3rem;
   font-weight: bold;
-  margin: 1rem 0;
+  margin: 1.5rem 0;
+  font-family: typo.$font-secondary;
 }
 
 .des {
@@ -61,10 +66,17 @@
   padding: 1.5rem 1rem;
 
   div {
-
     i {
       font-size: 1rem;
-      margin-right: .4rem;
+      margin-right: 0.4rem;
     }
   }
+}
+
+.Link {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 5000;
+  cursor: pointer;
 }

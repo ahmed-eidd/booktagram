@@ -41,8 +41,8 @@ function MyApp({ Component, pageProps }) {
   const theme = extendTheme({
     styles: {
       global: {
-        'body': {
-          color: '#21545F' 
+        body: {
+          color: '#21545F',
         },
       },
     },
@@ -63,6 +63,11 @@ function MyApp({ Component, pageProps }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+          rel="stylesheet"
+        ></link>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap"
           rel="stylesheet"
         ></link>
         <link

@@ -1,10 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
 import classes from './GroupCard.module.scss';
+import Link from 'next/link'
 
 const GroupCard = () => {
   return (
     <div className={classes.GroupCard}>
+      <Link  href="/club/randomid"><a className={classes.Link}></a></Link>
       <div className={classes.ImgContainer}>
         <div className={classes.BgImg}>
           <Image
