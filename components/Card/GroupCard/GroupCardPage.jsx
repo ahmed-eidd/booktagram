@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Button from '../../Button/Button';
 import { Grid } from '@chakra-ui/layout';
 import classes from './GroupCardPage.module.scss';
+import Tabs from '../../Tabs/Tabs';
 
 const GroupCardPage = () => {
   return (
@@ -30,7 +31,8 @@ const GroupCardPage = () => {
         </div>
       </div>
       <Button className={classes.JoinBtn}>Join This Club</Button>
-      <div className={classes.Tabs}>Tabs</div>
+      {/* <div className={classes.Tabs}>Tabs</div> */}
+      <Tabs tabs={['Discussion','Currently reading', 'Rules'] }  className={classes.Tabs} /> 
     </Grid>
   );
 };

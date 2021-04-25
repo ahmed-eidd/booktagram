@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import classes from './CardPage.module.scss';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react';
+// import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react';
+import Tabs from '../Tabs/Tabs';
 
 const CardPage = () => {
   const tabs = ['Speakers', 'Details', 'Orgnaizer'];
@@ -58,7 +59,8 @@ const CardPage = () => {
           </div>
         </div>
       </div>
-      <Tabs variant="unstyled" className={classes.Tabs}>
+      <Tabs tabs={['Speakers', 'Details', 'Orgnaizer']} />
+      {/* <Tabs variant="unstyled" className={classes.Tabs}>
         <TabList>
           {tabs.map((el) => (
             <Tab _selected={tabSelected} className={classes.Tab}>
@@ -78,7 +80,7 @@ const CardPage = () => {
             <p>three!</p>
           </TabPanel>
         </TabPanels>
-      </Tabs>
+      </Tabs> */}
     </div>
   );
 };
