@@ -58,5 +58,7 @@
 
 .Tabs {
   grid-column: 3 / span 4;
-  justify-content: space-between;
+  div {
+    justify-content: space-between;
+  }
 }
