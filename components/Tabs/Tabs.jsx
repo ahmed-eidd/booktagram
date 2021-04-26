@@ -8,9 +8,9 @@ import {
 } from '@chakra-ui/react';
 import classes from './Tabs.module.scss';
 
-const Tabs = ({tabs = [], className = '',}) => {
+const Tabs = ({tabs = [], className = '', children}) => {
   // const tabs = ['Speakers', 'Details', 'Orgnaizer'];
-
+  // console.log('tabs', children)
   const tabSelected = {
     opacity: '100% !important',
     boxShadow: '0 !important',
@@ -28,15 +28,7 @@ const Tabs = ({tabs = [], className = '',}) => {
       </TabList>
 
       <TabPanels>
-        <TabPanel>
-          <p>one!</p>
-        </TabPanel>
-        <TabPanel>
-          <p>two!</p>
-        </TabPanel>
-        <TabPanel>
-          <p>three!</p>
-        </TabPanel>
+      {children}
       </TabPanels>
     </CTabs>
   );
