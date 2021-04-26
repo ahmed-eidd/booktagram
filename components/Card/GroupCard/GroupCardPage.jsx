@@ -4,6 +4,8 @@ import Button from '../../Button/Button';
 import { Grid } from '@chakra-ui/layout';
 import classes from './GroupCardPage.module.scss';
 import Tabs from '../../Tabs/Tabs';
+import TabPanel from '../../Tabs/TabPanel/TabPanel';
+// import { TabPanel } from '@chakra-ui/react';
 
 const GroupCardPage = () => {
   return (
@@ -32,7 +34,14 @@ const GroupCardPage = () => {
       </div>
       <Button className={classes.JoinBtn}>Join This Club</Button>
       {/* <div className={classes.Tabs}>Tabs</div> */}
-      <Tabs tabs={['Discussion','Currently reading', 'Rules'] }  className={classes.Tabs} /> 
+      <Tabs
+        tabs={['Discussion', 'Currently reading', 'Rules']}
+        className={classes.Tabs}
+      >
+        <TabPanel>One</TabPanel>
+        <TabPanel>Two</TabPanel>
+        <TabPanel>Three</TabPanel>
+      </Tabs>
     </Grid>
   );
 };
