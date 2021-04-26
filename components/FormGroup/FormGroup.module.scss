@@ -1,8 +1,8 @@
 @use '../../styles/abstract/colors' as clr;
 
 .container {
-  min-width: 300px;
-  max-width: 400px;
+  min-width: 18.75rem;
+  max-width: 25rem;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -11,7 +11,7 @@
 }
 
 .title {
-  font-size: 26px;
+  font-size: 1.6rem;
   color: clr.$color-primary;
   font-weight: 700;
   margin: 10px 0;

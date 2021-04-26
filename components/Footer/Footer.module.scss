@@ -28,7 +28,7 @@
   }
   p {
     text-align: justify;
-    padding-right: 15px;
+    padding-right: 0.9rem;
     line-height: 2.5;
   }
 }
@@ -46,8 +46,8 @@
   ul {
     display: grid;
     grid-template-columns: auto auto;
-    column-gap: 30px;
-    row-gap: 15px;
+    column-gap: 1.8rem;
+    row-gap: 0.9rem;
     margin-top: 0.7rem;
   }
 }
