@@ -13,13 +13,21 @@ import { ReactReduxFirebaseProvider } from 'react-redux-firebase';
 
 function MyApp({ Component, pageProps }) {
   const fbconfing = {
-    apiKey: 'AIzaSyA6dFWd86WNPcx7YDqAkldnFxDsg6BKEyk',
-    authDomain: 'booktagram-f29df.firebaseapp.com',
-    projectId: 'booktagram-f29df',
-    storageBucket: 'booktagram-f29df.appspot.com',
-    messagingSenderId: '1041639497306',
-    appId: '1:1041639497306:web:504683d81bae6df8f10263',
-    measurementId: 'G-FN3XP1DL6W',
+    // apiKey: 'AIzaSyA6dFWd86WNPcx7YDqAkldnFxDsg6BKEyk',
+    // authDomain: 'booktagram-f29df.firebaseapp.com',
+    // projectId: 'booktagram-f29df',
+    // storageBucket: 'booktagram-f29df.appspot.com',
+    // messagingSenderId: '1041639497306',
+    // appId: '1:1041639497306:web:504683d81bae6df8f10263',
+    // measurementId: 'G-FN3XP1DL6W',
+
+    apiKey: process.env.NEXT_PUBLIC_apiKey,
+    authDomain:process.env.NEXT_PUBLIC_authDomain,
+    projectId: process.env.NEXT_PUBLIC_projectId,
+    storageBucket: process.env.NEXT_PUBLIC_storageBucket,
+    messagingSenderId: process.env.NEXT_PUBLIC_messagingSenderId,
+    appId:process.env.NEXT_PUBLIC_appId,
+    measurementId: process.env.NEXT_PUBLIC_measurementId,
   };
 
   const rrfConfing = {
